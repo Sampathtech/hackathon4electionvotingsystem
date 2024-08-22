@@ -1,0 +1,30 @@
+Enter party name (A, B, C): a
+Vote cast successfully for gitam vsp!
+
+Options:
+1. Cast a vote
+2. Tally votes and show results
+3. Exit
+Enter your choice: 1
+Enter party name (A, B, C): c
+Vote cast successfully for gitam blr!
+
+Options:
+1. Cast a vote
+2. Tally votes and show results
+3. Exit
+Enter your choice: 1
+Enter party name (A, B, C): c
+Vote cast successfully for gitam blr!
+
+Options:
+1. Cast a vote
+2. Tally votes and show results
+3. Exit
+Enter your choice: 2
+Election Results:
+gitam vsp (Party A): 1 votes
+gitam hyd (Party B): 0 votes
+gitam blr (Party C): 2 votes
+
+=== Code Execution Successful ===
