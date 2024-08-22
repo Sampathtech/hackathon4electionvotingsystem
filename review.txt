@@ -1,0 +1,52 @@
+### Overview
+The `VotingSystem` class encapsulates the entire voting process. The system allows users to:
+1. Set candidate names for predefined parties.
+2. Cast votes securely using a cryptographic hash function.
+3. Tally votes and display election results.
+4. Exit the system at any point.
+
+### Components
+1. **Class Initialization (`__init__`)**:
+   - The class initializes a dictionary `candidates`, which contains three parties (`A`, `B`, and `C`), each with a placeholder for the candidate's name and a counter for the votes received.
+   - An empty list `votes` is initialized to store the hashed votes.
+
+2. **Setting Candidate Names (`set_candidate_names`)**:
+   - This method prompts the user to enter the names of the candidates for each party.
+   - The names are stored in the `candidates` dictionary under the corresponding party key.
+
+3. **Casting a Vote (`cast_vote`)**:
+   - When a user chooses to vote, they enter the party name (`A`, `B`, or `C`).
+   - The party name is hashed using the SHA-256 algorithm, ensuring that the vote is stored securely and anonymously.
+   - The hashed vote is then appended to the `votes` list, and a confirmation message is displayed.
+
+4. **Tallying Votes (`tally_votes`)**:
+   - This method iterates through the list of hashed votes and compares them against the hashed party names.
+   - For each match, the corresponding candidate's vote count is incremented in the `candidates` dictionary.
+
+5. **Displaying Results (`display_results`)**:
+   - After tallying, this method prints the election results, displaying the number of votes each candidate received.
+
+6. **Running the Election (`run_election`)**:
+   - The `run_election` method is the main interface for interacting with the voting system.
+   - It starts by setting candidate names, then enters a loop where users can choose to cast votes, tally votes and view results, or exit the system.
+
+7. **Main Execution Block**:
+   - The `if __name__ == "__main__":` block ensures that the voting system runs when the script is executed directly.
+
+### Security Aspect
+- **Hashing with SHA-256**: The use of the `hashlib` library's SHA-256 algorithm ensures that votes are stored as unique hashes, preventing tampering or vote duplication.
+- **Anonymity**: By hashing the party names, voter choices remain confidential, as the actual party name is not stored in plain text.
+
+### Example Execution Flow
+1. The program starts and asks the user to enter candidate names for Party A, Party B, and Party C.
+2. It then displays the options to cast a vote, tally votes, or exit.
+3. The user can cast a vote by entering the corresponding party name. The vote is securely stored as a hashed value.
+4. After all votes are cast, the user can choose to tally the votes and display the results.
+5. The program then exits, ensuring that the election process is complete and secure.
+
+### Extensions and Improvements
+- **User Authentication**: Add user authentication to ensure that only authorized voters can participate.
+- **Data Persistence**: Store votes in a file or database to maintain records across multiple runs of the program.
+- **Real-time Vote Counting**: Modify the system to tally votes as they are cast, allowing for real-time results updates.
+
+This project lays the foundation for a secure and simple electronic voting system, with potential for further enhancements to meet more sophisticated requirements.
